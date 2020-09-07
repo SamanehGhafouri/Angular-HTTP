@@ -18,10 +18,10 @@ export class SimpleHttpComponent implements OnInit {
   makeRequest(): void {
     this.loading = true;
     this.http
-      .get('https://jsonplaceholder.typicode.com/posts/1')
+      .get('https://jsonplaceholder.typicode.com/posts/1') // Get request, returns an Observable so we can subscribe
       .subscribe(data => {
-        this.data = data;
-        this.loading = false;
+        this.data = data;     // set that to that Object
+        this.loading = false; // Since we have a response we are not loading anymore
       });
 
   }
