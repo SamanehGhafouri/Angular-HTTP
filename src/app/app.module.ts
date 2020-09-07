@@ -5,18 +5,22 @@ import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { SimpleHttpComponent } from './simple-http/simple-http.component';
+import { YouTubeSearchComponent } from './you-tube-search/you-tube-search.component';
+import {youTubeSearchInjectables} from "./you-tube-search/you-tube-search.injectables";
 
 @NgModule({
   declarations: [
     AppComponent,
-    SimpleHttpComponent
+    SimpleHttpComponent,
+    YouTubeSearchComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [youTubeSearchInjectables],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
