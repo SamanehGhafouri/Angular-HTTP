@@ -5,7 +5,9 @@ export class SearchResult{
   thumbnailUrl: string;
   videoUrl: string;
 
-  constructor(obj?: any) {
+  constructor(obj?: any) {  //obj?: any  lets us simulate keyword arguments.
+                            // The idea is that we can create a new SearchResult and just pass in an object containing
+                            // the key we want to specify.
     this.id = obj && obj.id || null;
     this.title = obj && obj.title || null;
     this.description = obj && obj.description || null;

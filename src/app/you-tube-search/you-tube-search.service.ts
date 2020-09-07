@@ -7,6 +7,7 @@ import {
 
 import {Observable} from "rxjs";
 import { SearchResult } from './search-result.model';
+import {map} from "rxjs/operators";
 
 /*
   This API key may or may not work for you. Your best bet is to issue your own
@@ -42,7 +43,7 @@ export class YouTubeSearchService {
       `maxResults=10`
     ].join('&');
     const queryUrl = `${this.apiUrl}?${params}`;
-    return this.http.get(queryUrl).map(response => {
+    return this.http.get(queryUrl).pipe(map(response => {
       return <any>response['items'].map(item => {
         // console.log("raw item", item); // uncomment if you want to debug
         return new SearchResult({
@@ -52,6 +53,6 @@ export class YouTubeSearchService {
           thumbnailUrl: item.snippet.thumbnails.high.url
         });
       });
-    });
+    }));
   }
 }
