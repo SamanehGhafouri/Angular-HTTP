@@ -19,6 +19,7 @@ import {map} from "rxjs/operators";
 */
 export const YOUTUBE_API_KEY =
   'AIzaSyDOfT_BO81aEZScosfTYMruJobmpjqNeEk';
+
 export const YOUTUBE_API_URL =
   'https://www.googleapis.com/youtube/v3/search';
 
@@ -31,6 +32,7 @@ export class YouTubeSearchService {
   constructor(
     private http: HttpClient,
     @Inject(YOUTUBE_API_KEY) private apiKey: string,
+
     @Inject(YOUTUBE_API_URL) private apiUrl: string
   ) {}
 
